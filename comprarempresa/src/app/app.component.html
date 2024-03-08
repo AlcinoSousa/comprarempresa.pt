@@ -1,1 +1,70 @@
-<p-calendar></p-calendar>
+<div class="flex justify-content-center mt-6">
+
+    <p-accordion class="col-2">
+        <p-accordionTab>
+            <ng-template pTemplate="header">
+                <span class="flex align-items-center gap-2 w-full">
+
+                </span>
+            </ng-template>
+            <div class="col-12 mb-4 flex justify-content-between">
+                <span class="p-float-label">
+                    <p-inputNumber [size]="6" inputId="integeronly"> </p-inputNumber>
+                    <label for="number-input">Valor mínimo</label>
+                </span>
+                <span class="p-float-label">
+                    <p-inputNumber [size]="6" inputId="integeronly"> </p-inputNumber>
+                    <label for="number-input">Valor máximo</label>
+                </span>
+            </div>
+            <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+        </p-accordionTab>
+        <p-accordionTab>
+            <ng-template pTemplate="header">
+                <span class="flex align-items-center gap-2 w-full">
+
+                </span>
+            </ng-template>
+            <p class="m-0">
+
+            </p>
+        </p-accordionTab>
+        <p-accordionTab>
+            <ng-template pTemplate="header">
+                <span class="flex align-items-center gap-2 w-full">
+
+                </span>
+            </ng-template>
+            <p class="m-0">
+
+            </p>
+        </p-accordionTab>
+    </p-accordion>
+
+
+    <div class="col-8 card">
+        <p-dataView #dv [value]="businessAds" [layout]="'grid'" [rows]="8" [paginator]="true">
+            <ng-template let-businessAd pTemplate="grid" let-businessAds>
+                <div class="grid grid-nogutter">
+                    <div class="col-12 sm:col-4 lg:col-3 xl:col-3 p-2" *ngFor="let businessAd of businessAds">
+                        <div class="p-4 border-1 surface-border surface-card card-round">
+                            <img class="w-9 shadow-2 image-top-round" [src]="businessAd.picture"
+                                [alt]="businessAd.name" />
+                            <div class="flex flex-column justify-content-start gap-3 py-5">
+                                <div class="text-2xl font-bold">{{ businessAd.name }}</div>
+                            </div>
+                            <div class="grid justify-content-end">
+                                <span class="col-12 font-semibold text-right">{{ businessAd.address }}<i
+                                        class="ml-2 pi pi-map-marker"></i></span>
+                                <span class="col-12 font-semibold text-right">{{ businessAd.type }}<i
+                                        class="ml-2 pi pi-truck"></i></span>
+                                <span class="col-12 font-semibold text-right">{{ businessAd.price }}<i
+                                        class="ml-2 pi pi-euro"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-dataView>
+    </div>
+</div>
