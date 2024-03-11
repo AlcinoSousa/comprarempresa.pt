@@ -7,9 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { AccordionModule } from 'primeng/accordion';
 import { SliderModule } from 'primeng/slider';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     imports: [
+        AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
         DataViewModule,
