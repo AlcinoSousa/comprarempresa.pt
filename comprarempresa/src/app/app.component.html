@@ -1,10 +1,8 @@
 <div class="flex justify-content-center mt-6">
-
     <p-accordion class="col-2">
         <p-accordionTab>
             <ng-template pTemplate="header">
                 <span class="flex align-items-center gap-2 w-full">
-
                 </span>
             </ng-template>
             <div class="col-12 mb-4 flex justify-content-between">
@@ -19,12 +17,7 @@
             </div>
             <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
         </p-accordionTab>
-        <p-accordionTab>
-        </p-accordionTab>
-        <p-accordionTab>
-        </p-accordionTab>
     </p-accordion>
-
 
     <div class="col-8 card">
         <p-dataView #dv [value]="businessAds" [layout]="'grid'" [rows]="8" [paginator]="true">
@@ -49,7 +42,6 @@
                     </div>
                 </div>
             </ng-template>
-            
         </p-dataView>
     </div>
 </div>
