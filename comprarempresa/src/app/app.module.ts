@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
     imports: [
         AppRoutingModule,
         BrowserModule,
-        BrowserAnimationsModule,
         DataViewModule,
         FormsModule,
         AccordionModule,
